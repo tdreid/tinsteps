@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <Title>if-else</Title>
+      <Author>Trevor Reid</Author>
+      <Description>Creates an if-else block.</Description>
+      <Shortcut>ife</Shortcut>
+      <SnippetTypes>
+        <SnippetType>Expansion</SnippetType>
+        <SnippetType>SurroundsWith</SnippetType>
+      </SnippetTypes>
+    </Header>
+    <Snippet>
+      <Declarations>
+        <Literal>
+          <ID>Condition</ID>
+          <ToolTip>Replace with a condition to evaluate.</ToolTip>
+          <Default>true</Default>
+        </Literal>
+        <Literal>
+          <ID>PrimaryPath</ID>
+          <ToolTip>Replace with code to execute if condition is true.</ToolTip>
+          <Default>// Do something.</Default>
+        </Literal>
+        <Literal>
+          <ID>AlternatePath</ID>
+          <ToolTip>Replace with code to execute if condition is false.</ToolTip>
+          <Default>// Do something else.</Default>
+        </Literal>
+      </Declarations>
+      <Code Language="CSharp">
+        <![CDATA[if ($Condition$) 
+  {
+    $PrimaryPath$
+    $selected$ $end$
+  }
+  else
+  {
+    $AlternatePath$
+    
+  }]]>
+      </Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>
