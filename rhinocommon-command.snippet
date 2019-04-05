@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <SnippetTypes>
+        <SnippetType>Expansion</SnippetType>
+      </SnippetTypes>
+      <Title>RhinoCommand</Title>
+      <Author>
+        Trevor Reid
+      </Author>
+      <Description>
+        Creates a Rhino3d plugin Command
+      </Description>
+      <Shortcut>
+        rcmd
+      </Shortcut>
+    </Header>
+    <Snippet>
+      <Imports>
+        <Import>
+          <Namespace>Rhino</Namespace>
+        </Import>
+        <Import>
+          <Namespace>Rhino.Commands</Namespace>
+        </Import>
+      </Imports>
+      <Declarations>
+        <Literal>
+          <ID>CommandName</ID>
+          <Default>CommandName</Default>
+        </Literal>
+      </Declarations>
+      <Code Language="csharp" Delimiter="$">
+              <![CDATA[/// <summary>
+    /// Add a $CommandName$ command to Rhino 6
+    /// </summary>
+    public class $CommandName$ : Command
+    {
+        /// <summary>
+        ///  Initializes a new instance of the <see cref="$CommandName$"/> class.
+        /// </summary>
+        public $CommandName$()
+        {
+            // Rhino only creates one instance of each command class defined in a plug-in.
+            Instance = this;
+        }
+
+        /// <summary>Gets the only instance of this command.</summary>
+        public static $CommandName$ Instance
+        {
+            get; private set;
+        }
+
+        /// <summary>
+        /// Gets the command name as it is used on the Rhino command line.
+        /// </summary>
+        public override string EnglishName
+        {
+            get { return "$CommandName$"; }
+        }
+
+        /// <summary>
+        /// Executes the $CommandName$ command.
+        /// </summary>
+        /// <param name="doc">The current Rhino document that is the target of this command.</param>
+        /// <param name="mode">The command running mode: Interactive or Scripted.</param>
+        /// <returns>The command result code</returns>
+        protected override Result RunCommand(RhinoDoc doc, RunMode mode)
+        {
+            RhinoApp.WriteLine("The {0} command is under construction.", EnglishName);
+
+            return Result.Success;
+        }
+    }]]></Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>
