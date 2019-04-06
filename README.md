@@ -1,4 +1,4 @@
-# tinsteps
+# pinsteps
 A collection of snippets for use in Microsoft Visual Studio
 
 ## [Snippets For C#](/cs)
