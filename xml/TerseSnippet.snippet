@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets  
+    xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">  
+    <CodeSnippet Format="1.0.0">  
+        <Header>  
+            <Title>TerseSnippet</Title>
+            <Author>Trevor Reid</Author>
+            <Description>Creates a Visual Studio snippet with just enough metadata to work.</Description>
+            <Shortcut>tsnip</Shortcut>
+            <SnippetTypes>
+              <SnippetType>Expansion</SnippetType>
+            </SnippetTypes>
+        </Header>  
+        <Snippet>  
+            <Declarations>
+              <Literal>
+                <ID>Title</ID>
+                <ToolTip>Specify a title for the code snippet</ToolTip>
+                <Default>NewSnippet</Default>
+              </Literal>
+              <Literal>
+                <ID>Language</ID>
+                <ToolTip>Specify the language of the code snippet.</ToolTip>
+                <Default>csharp</Default>
+              </Literal>
+              <Literal Editable="false">
+                <ID>endcdata</ID>
+                <Default>]]&gt;</Default>
+              </Literal>                          
+            </Declarations>
+            <Code Language="xml">  
+              <![CDATA[<CodeSnippets  
+      xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">  
+      <CodeSnippet Format="1.0.0">  
+          <Header>  
+              <Title>$Title$</Title>  
+          </Header>  
+          <Snippet>  
+              <Code Language="$Language$">  
+                  <![CDATA[$endcdata$
+              </Code>  
+          </Snippet>  
+      </CodeSnippet>  
+  </CodeSnippets>]]>  
+            </Code>  
+        </Snippet>  
+    </CodeSnippet>  
+</CodeSnippets>
